@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Attendance by Day</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background-color: #f4f4f4;
+    }
+    canvas {
+      background-color: white;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Career Fair Attendace by Day</h2>
+  <canvas id="myBarChart" width="600" height="400"></canvas>
+
+<p1> Career Fair Week Overview
+
+The Career Fair took place from Monday through Friday, offering students the opportunity to connect with employers from a wide range of industries. Each day featured different companies, workshops, and networking events to help students explore career paths and internship opportunities.
+
+The bar chart shows the number of student attendees for each day of the fair.</p1>
+
+  <script>
+    const ctx = document.getElementById('myBarChart').getContext('2d');
+
+    const myBarChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        datasets: [{
+          label: 'Attendance',
+          data: [30, 24, 17, 15, 22],
+          borderWidth: 1,
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.6)',
+            'rgba(54, 162, 235, 0.6)',
+            'rgba(255, 206, 86, 0.6)',
+            'rgba(75, 192, 192, 0.6)',
+            'rgba(153, 102, 255, 0.6)'
+            
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)'
+            
+          ]
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
